@@ -2,6 +2,8 @@
   "pages": [
     "pages/index/main",
     "pages/logs/main",
+    "pages/user/profile/main",
+    "pages/user/main",
     "pages/counter/main"
   ],
   "tabBar": {
@@ -12,7 +14,12 @@
         "text": "健康管理"
       },
       {
-        "pagePath": "pages/counter/main",
+        "pagePath": "pages/user/profile/main",
+       
+        "text": "个人中心2"
+      },
+      {
+        "pagePath": "pages/user/main",
        
         "text": "个人中心"
       }
