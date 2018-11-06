@@ -7,7 +7,7 @@
 		"minified": true,
 		"newFeature": true
 	},
-	"miniprogramRoot": "./dist/wx/",
+	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
 	"appid": "wx83ac407b4d438f5e",
 	"projectname": "kele_small_data",

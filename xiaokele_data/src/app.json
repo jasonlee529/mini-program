@@ -4,6 +4,20 @@
     "pages/logs/main",
     "pages/counter/main"
   ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/main",
+       
+        "text": "健康管理"
+      },
+      {
+        "pagePath": "pages/counter/main",
+       
+        "text": "个人中心"
+      }
+    ]
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
