@@ -62,6 +62,7 @@ export default {
       })
     },
     clickHandle (msg, ev) {
+      console.log(process.env)
       console.log('clickHandle:', msg, ev)
     }
   },

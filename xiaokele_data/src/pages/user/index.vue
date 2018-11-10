@@ -1,19 +1,5 @@
 <template>
   <div class="container" @click="clickHandle('test click', $event)">
-       <van-row>
-  <van-col span="8">span: 8</van-col>
-  <van-col span="8">span: 8</van-col>
-  <van-col span="8">span: 8</van-col>
-</van-row>
-
-<van-row>
-  <van-col span="4">span: 4</van-col>
-  <van-col span="10" offset="4">offset: 4, span: 10</van-col>
-</van-row>
-
-<van-row>
-  <van-col offset="12" span="12">offset: 12, span: 12</van-col>
-</van-row>
     <div class="userinfo" @click="bindViewTap">
       <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
       <div class="userinfo-nickname">
