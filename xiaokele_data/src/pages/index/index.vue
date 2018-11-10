@@ -1,6 +1,5 @@
 <template>
-  <div class="container" @click="clickHandle('test click', $event)">
-
+  <div class="container">
     <div class="userinfo" >
       <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
       <div class="userinfo-nickname">
@@ -8,20 +7,11 @@
       </div>
       
     </div>
-<button open-type="getUserInfo">用户授权</button>
     <div class="usermotto">
       <div class="user-motto">
         <card :text="motto"></card>
       </div>
     </div>
-
-    <form class="form-container">
-      <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
-    </form>
-    <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
-        <van-button type="primary"
-                @click="onClick">测试</van-button>
   </div>
 </template>
 
@@ -60,6 +50,10 @@ export default {
   },
   created() {
     // 调用应用实例的方法获取全局数据
+    const url = "/pages/user/register/main";
+    wx.navigateTo({ url });
+    if (!this.userInfo.avatarUrl) {
+    }
     this.getUserInfo();
   }
 };

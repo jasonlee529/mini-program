@@ -3,8 +3,8 @@
     "pages/index/main",
     "pages/logs/main",
     "pages/user/profile/main",
-    "pages/user/main",
-    "pages/counter/main"
+    "pages/user/register/main",
+    "pages/user/main"
   ],
   "tabBar": {
     "list": [
