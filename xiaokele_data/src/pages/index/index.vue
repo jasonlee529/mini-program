@@ -1,77 +1,68 @@
 <template>
   <div class="container" @click="clickHandle('test click', $event)">
-       <van-row>
-  <van-col span="8">span: 8</van-col>
-  <van-col span="8">span: 8</van-col>
-  <van-col span="8">span: 8</van-col>
-</van-row>
 
-<van-row>
-  <van-col span="4">span: 4</van-col>
-  <van-col span="10" offset="4">offset: 4, span: 10</van-col>
-</van-row>
-
-<van-row>
-  <van-col offset="12" span="12">offset: 12, span: 12</van-col>
-</van-row>
-    <div class="userinfo" @click="bindViewTap">
+    <div class="userinfo" >
       <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
       <div class="userinfo-nickname">
         <card :text="userInfo.nickName"></card>
       </div>
+      
+    </div>
+<button open-type="getUserInfo">用户授权</button>
+    <div class="usermotto">
+      <div class="user-motto">
+        <card :text="motto"></card>
+      </div>
     </div>
 
-   
+    <form class="form-container">
+      <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
+      <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
+    </form>
+    <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
         <van-button type="primary"
                 @click="onClick">测试</van-button>
   </div>
-
-
 </template>
 
 <script>
-import card from '@/components/card'
-
+import card from "@/components/card";
 export default {
-  data () {
+  data() {
     return {
-      motto: 'Hello World',
+      motto: "Hello World",
       userInfo: {}
-    }
+    };
   },
-
   components: {
     card
   },
-
   methods: {
-    bindViewTap () {
-      const url = '../logs/main'
-      wx.navigateTo({ url })
+    bindViewTap() {
+      const url = "../logs/main";
+      wx.navigateTo({ url });
     },
-    getUserInfo () {
+    getUserInfo() {
       // 调用登录接口
       wx.login({
         success: () => {
           wx.getUserInfo({
-            success: (res) => {
-              this.userInfo = res.userInfo
+            success: res => {
+              this.userInfo = res.userInfo;
             }
-          })
+          });
         }
-      })
+      });
     },
-    clickHandle (msg, ev) {
-      console.log(process.env)
-      console.log('clickHandle:', msg, ev)
+    clickHandle(msg, ev) {
+      console.log("clickHandle:", msg, ev);
     }
   },
-
-  created () {
+  created() {
     // 调用应用实例的方法获取全局数据
-    this.getUserInfo()
+    this.getUserInfo();
   }
-}
+};
 </script>
 
 <style scoped>
@@ -80,29 +71,24 @@ export default {
   flex-direction: column;
   align-items: center;
 }
-
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
   margin: 20rpx;
   border-radius: 50%;
 }
-
 .userinfo-nickname {
   color: #aaa;
 }
-
 .usermotto {
   margin-top: 150px;
 }
-
 .form-control {
   display: block;
   padding: 0 12px;
   margin-bottom: 5px;
   border: 1px solid #ccc;
 }
-
 .counter {
   display: inline-block;
   margin: 10px auto;
