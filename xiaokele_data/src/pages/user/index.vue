@@ -6,13 +6,9 @@
         <card :text="userInfo.nickName"></card>
       </div>
     </div>
-
-   
         <van-button type="primary"
                 @click="onClick">测试</van-button>
   </div>
-
-
 </template>
 
 <script>
