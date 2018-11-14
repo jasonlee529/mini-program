@@ -15,12 +15,18 @@ export default class UserPage extends Component {
     config: Config = {
         navigationBarTitleText: '用户中心'
     }
+    constructor(){
+    }
     handleClick = e => {
         console.log('Click Item', e)
     }
-    gridClick=(item,index)=> {
+    gridClick = (item, index) => {
         console.log(item);
         console.log(index);
+    }
+    onClick() {
+        // alert('点击了！')
+        console.log(arguments)
     }
     componentWillMount() { }
 
@@ -35,12 +41,13 @@ export default class UserPage extends Component {
     render() {
         return (
             <View className='index'>
-                <View className='at-row'>
-                    <View className='at-col at-col-11'>
-                        <AtAvatar circle size='large' openData={{ type: 'userAvatarUrl' }}></AtAvatar>
+                <View className='at-row' >
+                <View className='at-col at-col__offset-1'></View> 
+                    <View className='at-col at-col-9' onClick={this.handleClick}>
+                       <AtAvatar circle size='large' openData={{ type: 'userAvatarUrl' }}></AtAvatar>
                     </View>
-                    <View className='at-col'>
-                        <AtIcon value='chevron-right' size='30' color='#ccc'></AtIcon>
+                    <View className='at-col at-col-2'>
+                        <AtIcon value='chevron-right' size='40' color='#fff'></AtIcon>
                     </View>
                 </View>
                 <View className='at-row'>

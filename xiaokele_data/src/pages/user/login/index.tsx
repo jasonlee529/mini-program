@@ -1,7 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
-import { AtAvatar, AtGrid, AtIcon } from 'taro-ui'
-import { AtList, AtListItem } from "taro-ui"
+import { AtButton, AtListItem } from "taro-ui"
 
 export default class LoginPage extends Component {
 
@@ -14,6 +13,9 @@ export default class LoginPage extends Component {
      */
     config: Config = {
         navigationBarTitleText: '登录'
+    }
+    onGotUserInfo = e =>{
+        console.log('bindGetUserInfo',e)
     }
     handleClick = e => {
         console.log('Click Item', e)
@@ -32,19 +34,11 @@ export default class LoginPage extends Component {
         return (
             <View className='index'>
                 <View className='at-row'>
-                    <View className='at-col'>
-                        <AtAvatar circle size='large' openData={{ type: 'userAvatarUrl' }}></AtAvatar>
-                    </View>
-                    <View className='at-col'>
-                        <AtIcon value='chevron-right' size='30' color='#F00'></AtIcon>
+                    <View className='at-col at-col-6'>
+                        <AtButton size='normal' openType='getUserInfo' bindgetuserinfo={this.onGotUserInfo}>点击登录</AtButton>
                     </View>
                 </View>
-                <AtList>
-                    <AtListItem title='标题文字' onClick={this.handleClick} />
-                    <AtListItem arrow='right' ><AtAvatar circle size='large' openData={{ type: 'userAvatarUrl' }}></AtAvatar></AtListItem>
-                    <AtListItem title='标题文字' extraText='详细信息' />
-                    <AtListItem title='禁用状态' disabled extraText='详细信息' />
-                </AtList>
+               
             </View >
         )
     }

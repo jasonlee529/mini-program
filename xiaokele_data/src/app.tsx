@@ -32,6 +32,9 @@ class App extends Component {
         pagePath: "pages/index/index",
         text: "首页"
       }, {
+        pagePath: "pages/user/login/index",
+        text: "我的"
+      }, {
         pagePath: "pages/user/index",
         text: "我的"
       }]
