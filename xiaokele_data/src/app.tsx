@@ -18,6 +18,7 @@ class App extends Component {
    */
   config: Config = {
     pages: [
+      'pages/user/index',
       'pages/user/login/index',
       'pages/index/index'
     ],
@@ -31,8 +32,8 @@ class App extends Component {
         pagePath: "pages/index/index",
         text: "首页"
       }, {
-        pagePath: "pages/user/login/index",
-        text: "登录"
+        pagePath: "pages/user/index",
+        text: "我的"
       }]
     },
   }
