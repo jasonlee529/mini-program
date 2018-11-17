@@ -33,12 +33,11 @@ export default class LoginPage extends Component {
     render() {
         return (
             <View className='index'>
-                <View className='at-row'>
+                <View style='height:150px;' className='at-row at-row__justify--center'>
                     <View className='at-col at-col-6'>
-                        <AtButton size='normal' openType='getUserInfo' bindgetuserinfo={this.onGotUserInfo}>点击登录</AtButton>
+                        <AtButton size='normal' openType='getUserInfo' onGetUserInfo={this.onGotUserInfo}>点击登录</AtButton>
                     </View>
                 </View>
-               
             </View >
         )
     }
